@@ -9,9 +9,10 @@ const UserSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true,
+        required: true
     },
-});
+  });
+
 
 // Hash a senha antes de salvar
 UserSchema.pre('save', async function (next) {
@@ -32,5 +33,9 @@ UserSchema.methods.comparePassword = function (candidatePassword) {
 };
 
 
-const User = mongoose.models.User || mongoose.model('User', UserSchema);
-export default User;
+
+
+  const User = mongoose.models.User || mongoose.model('User', UserSchema);
+ 
+  export default User;
+ 
